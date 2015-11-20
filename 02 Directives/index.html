@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>AngularJS Directives</title>
+  </head>
+
+  <body ng-init="name='Sam'">
+    <div ng-hide="isHidden">
+      Name: <input type="text" ng-model="name" />
+    </div>
+    Hide: <input type="checkbox" ng-model="isHidden" />
+    <br />
+    <button ng-click="name='Retard'">Change Name</button>
+
+    <script src="../js/angular.js"></script>
+  </body>
+</html>
