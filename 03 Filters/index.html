@@ -17,7 +17,7 @@
     <br /><br />
     <table>
       <tr>
-        <th ng-repeat="(key, value) in customers[0]" ng-click="sortBy='{{key}}';reverse=!reverse">{{ key | uppercase }}</th>
+        <th ng-repeat="(key, value) in customers[0]" ng-click="$parent.sortBy=key;$parent.reverse=!$parent.reverse">{{ key | uppercase }}</th>
         <!--<th ng-click="sortBy='name'; reverse=!reverse">Name</th>
         <th ng-click="sortBy='city'; reverse=!reverse">City</th>
         <th ng-click="sortBy='orderTotal'; reverse=!reverse">Order Total</th>
