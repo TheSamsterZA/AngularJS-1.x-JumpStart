@@ -1,0 +1,13 @@
+<h2>Orders from {{ customer.name}}</h2>
+<table>
+  <tr>
+    <th ng-repeat="(key, value) in customer.orders[0]">{{ key | uppercase }}</th>
+  </tr>
+  <tr ng-repeat="order in customer.orders">
+    <td>{{ order.id }}</td>
+    <td>{{ order.product }}</td>
+    <td>{{ order.total | currency:'R '}}</td>
+  </tr>
+</table>
+</br />
+<span>Total Orders: {{ orders.length }}</span>
