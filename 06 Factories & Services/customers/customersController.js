@@ -2,12 +2,18 @@
 (function() {
   var controllers = angular.module('app').controllers;
 
-  controllers.customersController = function($scope, customersFactory, customersService) {
+  controllers.customersController = function($scope, $log, customersFactory, customersService) {
     $scope.customers = [];
 
     function init() {
       //$scope.customers = customersFactory.getCustomers();
-      $scope.customers = customersService.getCustomers();
+      customersService.getCustomers() // AJAX call, returns promise
+        .success(function(customers) {
+          $scope.customers = customers;
+        })
+        .error(function(data, status, headers, config) {
+          $log.log('HTTP ' + status + ' ' + config.method + ' ' + config.url + '\r\nError: ' +  data.error);
+        });
     }
 
     init();
@@ -20,7 +26,7 @@
       $scope.reverse = !$scope.reverse;
     };
   };
-  controllers.customersController.$inject = ['$scope', 'customersFactory', 'customersService']; // Syntax to deal with minification issue
+  controllers.customersController.$inject = ['$scope', '$log', 'customersFactory', 'customersService']; // Syntax to deal with minification issue
 
   // Alternative syntax to deal with minification issue
   // controllers.customersController = ['$scope', function($scope) {
