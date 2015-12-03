@@ -20,6 +20,31 @@ app.get('/api/customers', function(req, res) {
   //res.json(500, {error: 'An error has occurred!'});
 });
 
+app.get('/api/orders', function(req, res) {
+  var orders = [];
+  for (var i = 0; i < customers.length; i++) {
+    if (customers[i].orders) {
+      for (var j = 0; j < customers[i].orders.length; j++) {
+        orders.push(customers[i].orders[j]);
+      }
+    }
+  }
+  res.json(orders);
+});
+
+app.delete('/api/customers/:id', function(req, res) {
+  var customerId = parseInt(req.params.id);
+  var data = { status: false };
+  for (var i = 0; i < customers.length; i++) {
+    if (customers[i].id === customerId) {
+      customers.splice(i, 1);
+      data = { status: true };
+      break;
+    }
+  }
+  res.json(data);
+});
+
 app.listen(8888, 'localhost');
 
 var customers = [
