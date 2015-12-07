@@ -3,7 +3,7 @@
   <tr>
     <th ng-repeat="(key, value) in customer.orders[0]">{{ key | uppercase }}</th>
   </tr>
-  <tr ng-repeat="order in customer.orders">
+  <tr ng-repeat="order in customer.orders" class="repeat-animation">
     <td>{{ order.id }}</td>
     <td>{{ order.product }}</td>
     <td>{{ order.total | currency:'R '}}</td>

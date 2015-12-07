@@ -5,7 +5,8 @@ Filter: <input type="text" ng-model="productFilter.product" />
   <tr>
     <th ng-repeat="(key, value) in orders[0]" ng-click="sortOrders(key)">{{ key | uppercase }}</th>
   </tr>
-  <tr ng-repeat="order in orders | filter:productFilter | orderBy:sortBy:reverse">
+  <tr ng-repeat="order in orders | filter:productFilter | orderBy:sortBy:reverse"
+      class="repeat-animation">
     <td>{{ order.id }}</td>
     <td>{{ order.product }}</td>
     <td>{{ order.total | currency:'R ' }}</td>

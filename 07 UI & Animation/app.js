@@ -1,6 +1,6 @@
 (function() {
 
-  angular.module('app', ['ngRoute']); // Define module, with dependencies
+  angular.module('app', ['ngRoute', 'ngAnimate']); // Define module, with dependencies
 
   angular.module('app')
     .controllers = {}; // Custom object container for controllers
