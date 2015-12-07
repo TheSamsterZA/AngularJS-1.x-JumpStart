@@ -1,0 +1,21 @@
+<h2>Orders</h2>
+Filter: <input type="text" ng-model="productFilter.product" />
+<br /><br />
+<table class="table">
+  <tr>
+    <th ng-repeat="(key, value) in orders[0]" ng-click="sortOrders(key)">{{ key | uppercase }}</th>
+  </tr>
+  <tr ng-repeat="order in orders | filter:productFilter | orderBy:sortBy:reverse"
+      class="repeat-animation">
+    <td>{{ order.id }}</td>
+    <td>{{ order.product }}</td>
+    <td>{{ order.total | currency:'R ' }}</td>
+  </tr>
+  <tr ng-class="totalType">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>{{ ordersTotal | currency:'R ' }}</td>
+  </tr>
+</table>
+</br />
+<span>Total Orders: {{ orders.length }}</span>
