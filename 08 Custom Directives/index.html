@@ -19,6 +19,11 @@
     <main>
       <hello-world></hello-world>
       <div shared-scope></div>
+      <isolate-scope
+        title-at="{{ title }}"
+        version-eq="version"
+        action-amp="changeTitle();">
+      </isolate-scope>
       <div ng-view class="slide-animation"></div>
     </main>
 
@@ -37,5 +42,6 @@
     <script src="values/valuesController.js"></script>
     <script src="directives/helloWorldDirective.js"></script>
     <script src="directives/sharedScopeDirective.js"></script>
+    <script src="directives/isolateScopeDirective.js"></script>
   </body>
 </html>
