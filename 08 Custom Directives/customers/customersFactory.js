@@ -46,8 +46,4 @@
     return factory;
   };
   */
-
-  angular.module('app') // Reference module
-    .factory(factories);
-
 }()); // Self-invoked anonymous function; prevents polluting global namespace

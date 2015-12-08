@@ -20,8 +20,4 @@
     init();
   };
   controllers.ordersController.$inject = ['$scope', '$log', '$routeParams', 'customersFactory', 'customersService']; // Syntax to deal with minification issue
-
-  angular.module('app') // Reference module
-    .controller(controllers);
-
 }()); // Self-invoked anonymous function; prevents polluting global namespace

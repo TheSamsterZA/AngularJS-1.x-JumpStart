@@ -16,8 +16,4 @@
     };
   };
   services.customersService.$inject = ['$http']; // Syntax to deal with minification issue
-
-  angular.module('app') // Reference module
-    .service(services);
-
 }()); // Self-invoked anonymous function; prevents polluting global namespace

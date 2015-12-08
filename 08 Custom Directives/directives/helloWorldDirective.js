@@ -8,9 +8,5 @@
       scope: false, // Shared scope (default)
       template: 'Hello World!'
     };
-  };  
-
-  angular.module('app') // Reference module
-    .directive(directives);
-
+  };
 }()); // Self-invoked anonymous function; prevents polluting global namespace

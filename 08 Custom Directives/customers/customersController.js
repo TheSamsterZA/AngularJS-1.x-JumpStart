@@ -64,8 +64,4 @@
   //     $scope.reverse = !$scope.reverse;
   //   };
   // }];
-
-  angular.module('app') // Reference module
-    .controller(controllers);
-
 }()); // Self-invoked anonymous function; prevents polluting global namespace

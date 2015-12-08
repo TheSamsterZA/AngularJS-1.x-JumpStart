@@ -9,8 +9,4 @@
       template: '$scope.version: {{ version }}'
     };
   };
-
-  angular.module('app') // Reference module
-    .directive(directives);
-
 }()); // Self-invoked anonymous function; prevents polluting global namespace
